@@ -1,0 +1,118 @@
+/********************************
+Filename: style.css
+Author: Paramaporn (Moe) Prabphala
+Description: main CSS file for AJAX Lotto
+Date: November 6, 2018
+*********************************/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    color: #fd0054;
+    padding-top: 24px;
+}
+
+.main {
+    text-align: center;
+}
+.formBox {
+    display: flex;
+    justify-content: center;
+}
+label,
+span {
+    /* padding: 1em; */
+    text-align: center;
+    margin-right: 10px;
+}
+.page {
+    display: none;
+    padding: 2em;
+}
+
+.active {
+    display: block;
+}
+li {
+    list-style: none;
+    --borderWidth: 4px;
+    background:white;
+    position: relative;
+    border-radius: var(--borderWidth);
+    text-align: center;
+    padding: 30px 40px;
+    margin: 20px;
+
+}
+li:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+.num_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color:  #1D1F20;
+    font-size: 2rem;
+    font-weight: 700;
+}
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+button {
+    width: 250px;
+    padding: 12px 20px;
+    background-color: #6900ff;
+    color: #ffffff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    margin-top: 20px;
+}
+button:hover {
+    background-color: #faf7ff;
+    color: #6900ff;
+}
+
+@media (max-width: 799px) {
+    .num_list {
+        flex-direction: column;
+    }
+    li {
+        padding: 20px 20px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+    }
+}
+
